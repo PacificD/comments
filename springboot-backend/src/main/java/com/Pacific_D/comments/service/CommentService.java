@@ -17,7 +17,19 @@ public class CommentService {
         return commentMapper.comments();
     }
 
+    public int getCommentLength(){
+        return commentMapper.getCommentLength();
+    }
+
+    public int UpdateCommentLength(){
+        return commentMapper.updateCommentLength();
+    }
+
     public int addComment(Comment comment){
         return commentMapper.addComment(comment);
+    }
+
+    public int deleteComment(int id) {
+        return commentMapper.deleteComment(id);
     }
 }

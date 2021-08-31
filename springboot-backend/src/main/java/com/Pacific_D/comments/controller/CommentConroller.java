@@ -27,8 +27,23 @@ public class CommentConroller {
         return commentService.comments();
     }
 
+    @GetMapping("/comments/length")
+    public int getCommentLength(){
+        return commentService.getCommentLength();
+    }
+
+    @GetMapping("/comments/length/plus")
+    public int updateCommentLength(){
+        return commentService.UpdateCommentLength();
+    }
+
     @PostMapping("/comments")
     public int addComment(@RequestBody Comment comment){
         return commentService.addComment(comment);
+    }
+
+    @DeleteMapping("/comments/{id}")
+    public int deleteComments(@PathVariable int id){
+        return commentService.deleteComment(id);
     }
 }
